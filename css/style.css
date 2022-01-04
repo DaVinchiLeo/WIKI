@@ -1,8 +1,46 @@
 .my_img {
-    width: 300px;
-    height: 300px;
+    width: 30px;
+    height: 30px;
     border:solid 3px red;
   }
   .Search{
     border: solid 3px green;
   }
+
+  .main {
+    background: rgb(0, 37, 67);
+    color: rgb(206, 206, 206);
+    font-size: 24px;
+  }
+  
+  .main__wrapper {
+    margin: 0 100px;
+  }
+  
+  .main__keyword {
+    padding: 0 0 10px 60px;
+  }
+  
+  .main__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 30px;
+    justify-items: center;
+  }
+  
+  .main__grid-item {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .main__grid-item-content {
+    width: 252px;
+    height: 360px;
+    border: 1px dotted white;
+    border-radius: 10px;
+    background-image:none;
+  }
+  
