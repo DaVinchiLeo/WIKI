@@ -13,37 +13,29 @@ function creating_cont_div(namtt) {
       section_grid.append(main__grid_item);
       main__grid_item.append(div_grid);
 
-      
       div_grid.className = "main__grid-item-content";
 
-      //седлать через цикл!!!!
-      // разбить по логике
-      //resize для конваса;
-      //let massApi = ["Actors", "Awards", "Country", "Director", "Genre", "Language", "Metascore", "Plot", "Rated"];
-
-      let titleApi = Object.keys(data); //получаю массив с заголовками из Api
+      let titleApi = Object.keys(data);
       let poster = document.createElement("img");
-      poster.className="poster_img"
-      poster.src=data.Poster
-      div_grid.append(poster); 
+      poster.className = "poster_img";
+      poster.src = data.Poster;
+      div_grid.append(poster);
       for (let i = 0; i < titleApi.length; i++) {
-         let element = titleApi[i];
-         
+        let element = titleApi[i];
+
         let label = document.createElement("label");
         label.className = "label_in_film";
         let input = document.createElement("p");
         input.id = element;
         label.for = element;
-        
+
         if (data[element] != "N/A") {
           label.innerText = element;
           input.innerText = data[element];
-          
+
           div_grid.append(label);
           div_grid.append(input);
-              
         }
-        
       }
 
       let span = document.createElement("span");
@@ -51,21 +43,20 @@ function creating_cont_div(namtt) {
       span.innerText = data.Title;
       span.className = "main__grid-item-name";
     });
-}
+
 for (let i = 0; i < 6; i++) {
   //namtt = Math.trunc(Math.random() * 100000);
- namtt="t=top"
+  namtt = "t=top";
   console.log(namtt);
   creating_cont_div(namtt);
 }
 let SearchBut = document.getElementById("header__btn");
-  SearchBut.onclick = function (event) {
+SearchBut.onclick = function (event) {
   let Search = document.getElementById("Search");
-  let n=Search.value ;
-  let div_for_Search =document.createElement('div')
-  div_for_Search.className="main__grid-item-content"
+  let n = Search.value;
+  let div_for_Search = document.createElement("div");
+  div_for_Search.className = "main__grid-item-content";
   event.stopPropagation();
   let url = `http://www.omdbapi.com/?t=${n}&apikey=5bc4c999`;
-  
 };
-
+}
