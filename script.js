@@ -1,81 +1,71 @@
+function creating_cont_div(namtt) {
+  let url2 = `http://www.omdbapi.com/?${namtt}&apikey=fee19671`;
+  const promise_test2 = fetch(url2);
+  promise_test2
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      let section_grid = document.getElementById("section_grid");
+      let main__grid_item = document.createElement("div");
+      let div_grid = document.createElement("div");
+      section_grid.append(main__grid_item);
+      main__grid_item.append(div_grid);
 
- function creating_cont_div(namtt) {
-  let url2 = `http://www.omdbapi.com/?i=tt22${namtt}&apikey=5bc4c999`;
-const promise_test2 = fetch(url2);
-promise_test2
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-    let section_grid=document.getElementById("section_grid");
-    let main__grid_item = document.createElement("div");
-    let div_grid = document.createElement("div");
-    section_grid.append(main__grid_item);
-    main__grid_item.append(div_grid);
-    
-    div_grid.style.backgroundImage=data.Poster;
-    div_grid.className = "main__grid-item-content";
+      
+      div_grid.className = "main__grid-item-content";
 
-    let Actors = document.createElement("input");
-    div_grid.append(Actors);
-    Actors.value = data.Actors;
-    
-    let Awards = document.createElement("input");
-    div_grid.append(Awards);
-    Awards.value = data.Awards;
+      //седлать через цикл!!!!
+      // разбить по логике
+      //resize для конваса;
+      //let massApi = ["Actors", "Awards", "Country", "Director", "Genre", "Language", "Metascore", "Plot", "Rated"];
 
-    let Country = document.createElement("input");
-    div_grid.append(Country);
-    Country.value = data.Country;
+      let titleApi = Object.keys(data); //получаю массив с заголовками из Api
+      let poster = document.createElement("img");
+      poster.className="poster_img"
+      poster.src=data.Poster
+      div_grid.append(poster); 
+      for (let i = 0; i < titleApi.length; i++) {
+         let element = titleApi[i];
+         
+        let label = document.createElement("label");
+        label.className = "label_in_film";
+        let input = document.createElement("p");
+        input.id = element;
+        label.for = element;
+        
+        if (data[element] != "N/A") {
+          label.innerText = element;
+          input.innerText = data[element];
+          
+          div_grid.append(label);
+          div_grid.append(input);
+              
+        }
+        
+      }
 
-    let Director = document.createElement("input");
-    div_grid.append(Director);
-    Director.value = data.Director;
-
-    let Genre = document.createElement("input");
-    div_grid.append(Genre);
-    Genre.value = data.Genre;
-    
-    let Language = document.createElement("input");
-    div_grid.append(Language);
-    Language.value = data.Language;
-    
-    let Metascore = document.createElement("input");
-    div_grid.append(Metascore);
-    Metascore.value = data.Metascore;
-
-    let Plot = document.createElement("input");
-    div_grid.append(Plot);
-    Plot.value = data.Plot;
-    
-    let Rated = document.createElement("input");
-    div_grid.append(Rated);
-    Rated.value = data.Rated;
-  
-    
-    
-    let span = document.createElement("span");
-    main__grid_item.append(span);
-    span.innerText="some text"
-    span.className = "main__grid-item-name";
-
-  }); 
- } 
-for (let i = 0; i < 9; i++) {
-  
-  namtt=Math.trunc(Math.random()*100000)
-  console.log(namtt)
-  creating_cont_div(namtt);
-  
+      let span = document.createElement("span");
+      main__grid_item.append(span);
+      span.innerText = data.Title;
+      span.className = "main__grid-item-name";
+    });
 }
- /* let SearchBut = document.getElementById("SearchBut");
-SearchBut.onclick = function (event) {
+for (let i = 0; i < 6; i++) {
+  //namtt = Math.trunc(Math.random() * 100000);
+ namtt="t=top"
+  console.log(namtt);
+  creating_cont_div(namtt);
+}
+let SearchBut = document.getElementById("header__btn");
+  SearchBut.onclick = function (event) {
   let Search = document.getElementById("Search");
   let n=Search.value ;
+  let div_for_Search =document.createElement('div')
+  div_for_Search.className="main__grid-item-content"
   event.stopPropagation();
-  let url2 = `http://www.omdbapi.com/?t=${n}&apikey=5bc4c999`;
-};*/
-
-//let url2 = `http://www.omdbapi.com/?i=tt2354621&apikey=5bc4c999`;
+  let url = `http://www.omdbapi.com/?t=${n}&apikey=5bc4c999`;
+  
+};
 
