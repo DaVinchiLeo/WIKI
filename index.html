@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/header-logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="script.js" defer></script>
@@ -12,6 +16,18 @@
 </head>
 
 <body>
+<header class="header">
+		<div class="container">
+			<div class="header__logo">
+				<img src="img/header-logo.png" width="33px" height="35" alt="logo">
+				<span>MovieWiki</span>
+			</div>
+			<div class="header__search">
+				<input id="Search" type="search" placeholder="Enter movie keyword">
+				<button id="header__btn"><img src="img/header-search.png" alt="search" width="38" height="22"></button>
+			</div>
+		</div>
+	</header>
     <main class="main">
         <div class="main__wrapper">
             <p class="main__keyword">Movies with keyword ""</p>
@@ -34,8 +50,7 @@
             </section>
         </div>
     </main>
-    <input class="Search" type="text" id="Search"><br>
-    <button id="SearchBut">Search</button>
+    
 
 
 </body>
