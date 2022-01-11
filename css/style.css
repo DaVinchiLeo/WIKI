@@ -14,7 +14,7 @@
 }
 
 .main__wrapper {
-  margin: 0 100px;
+  margin: 0 auto;
 }
 
 .main__keyword {
@@ -66,10 +66,12 @@
   font-family: "Hind Siliguri", sans-serif;
 }
 .container {
-  width: 932px;
+  max-width: 932px;
   height: 100%;
   margin: 0 auto;
   display: flex;
+  gap: 10px;
+  justify-content: space-between;
 }
 .header__logo {
   width: 189px;
@@ -80,13 +82,13 @@
 }
 .header__search {
   width: 456px;
-  margin-left: 150px;
   display: flex;
-  justify-content: space-evenly;
+  gap: 5px;
+  justify-content: space-between;
   align-items: center;
 }
 .header__search input {
-  width: 390px;
+  width: 100%;
   height: 30px;
   border-radius: 10px;
   color: #ffffff;
