@@ -26,6 +26,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 30px;
   justify-items: center;
+  padding-top: 0px;
 }
 
 .main__grid-item {
@@ -45,6 +46,17 @@
   overflow: hidden;
   position: relative;
 }
+.main__grid-item-content2 {
+  width: 504px;
+  height: 720px;
+  border: 1px dotted white;
+  border-radius: 10px;
+  background-image: none;
+  overflow: hidden;
+  position: relative;
+  top: 25px;
+  left: 33%;
+}
 .label_in_film {
   font-size: 8px;
 }
@@ -55,6 +67,7 @@
   height: 100%;
   opacity: 0.6;
 }
+
 
 /*--------------------------------------------------------------*/
 /* background-color: #121e30  цвет фона мэйна*/
